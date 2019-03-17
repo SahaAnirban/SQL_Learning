@@ -1,0 +1,42 @@
+
+#create server and start it in background due to -d
+docker run -p 3306:3306 -d --name=mysql_db -e MYSQL_ROOT_PASSWORD=mysqlpass mysql/mysql-server
+docker ps
+docker logs mysql_db
+
+#get the ip address to use in workbench
+docker-machine ip default 
+
+#To have shell access to your MySQL Server container
+docker exec -it mysql_db bash 
+
+--------------------
+#starting a client
+docker exec -it mysql_db mysql -uroot -p
+
+#if root user password is not set
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysqlpass';
+
+---------------------
+Stopping and Deleting a MySQL Container
+docker stop mysql1
+docker start mysql1
+docker restart mysql1
+---------------
+extra:
+enterprise server command
+docker run --name=mysql1 -d store/oracle/mysql-enterprise-server:8.0.131
+
+Note: Some students have mentioned that they get errors instead of warnings when using MySQL for Mac (and possibly Windows/Linux). If you run into this error then you can try the following solution to resolve the issue:
+
+Take your setup out of strict mode with the following command:
+SET @@global.sql_mode= ''; 
+
+------------------------
+mysql commands:
+show databases;
+
+CREATE USER 'anisaha'@'%' IDENTIFIED BY 'mypass';
+GRANT ALL PRIVILEGES ON *.* TO 'anisaha'@'%';
+
+------------------------
