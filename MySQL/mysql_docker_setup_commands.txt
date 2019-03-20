@@ -19,13 +19,13 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysqlpass';
 
 ---------------------
 Stopping and Deleting a MySQL Container
-docker stop mysql1
-docker start mysql1
-docker restart mysql1
+docker stop mysql_db
+docker start mysql_db
+docker restart mysql_db
 ---------------
 extra:
 enterprise server command
-docker run --name=mysql1 -d store/oracle/mysql-enterprise-server:8.0.131
+docker run --name=mysql_db -d store/oracle/mysql-enterprise-server:8.0.131
 
 Note: Some students have mentioned that they get errors instead of warnings when using MySQL for Mac (and possibly Windows/Linux). If you run into this error then you can try the following solution to resolve the issue:
 
