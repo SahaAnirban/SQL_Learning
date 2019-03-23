@@ -1,0 +1,16 @@
+{
+  "name": "mysql_and_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "astle",
+  "license": "MIT",
+  "devDependencies": {
+    "@mysql/xdevapi": "file:mysql-connector-nodejs-8.0.15.tar.gz",
+    "faker": "^4.1.0",
+    "mysql": "^2.16.0"
+  }
+}

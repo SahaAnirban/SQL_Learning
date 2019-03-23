@@ -39,4 +39,8 @@ show databases;
 CREATE USER 'anisaha'@'%' IDENTIFIED BY 'mypass';
 GRANT ALL PRIVILEGES ON *.* TO 'anisaha'@'%';
 
+# mysql node workaround
+ALTER USER 'anisaha'@'%' IDENTIFIED WITH mysql_native_password BY 'mypass';
+
 ------------------------
+docker-machine stop default
